@@ -48,7 +48,7 @@ public class GravityBodyV2 : MonoBehaviour
         //Vector3 newDir = gravityDirection.normalized;
 
         rb.AddForce(GravityAreaforce * GravityDirection * Time.deltaTime, ForceMode.Acceleration);
-        //transform.up = gravityDirection;
+        //transform.up = -GravityDirection;
     }
 
     public void AddGravityArea(GravityAreaV2 gravityArea)
