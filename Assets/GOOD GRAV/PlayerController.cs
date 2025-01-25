@@ -12,18 +12,36 @@ public class PlayerController : MonoBehaviour
     private float _groundCheckRadius = 0.3f;
     private float _speed = 8;
     private float _turnSpeed = 1500f;
-    private float _jumpForce = 500f;
 
     private Rigidbody _rigidbody;
     private Vector3 _direction;
 
     private GravityBody _gravityBody;
+
+    public float acceleration;
+    public float deceleration;
+    public float currentSpeed = 0;
+    public float maxSpeed;
+
+    public float turnAccel;
+    public float currentTurnSpeed;
+
+    public float timSpeed;
+
+    public float jumpForce;
+
+    Vector3 direction;
     
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
         _gravityBody = transform.GetComponent<GravityBody>();
     }
+
+    //Hoe snel
+    //Hogere jump afhankelijk van speed
+    //Turn
+    //
 
     void Update()
     {
@@ -33,24 +51,62 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            _rigidbody.AddForce(-_gravityBody.GravityDirection * _jumpForce, ForceMode.Impulse);
+            float trueJumpForce = jumpForce * (timSpeed / 100);
+
+            _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            currentSpeed += acceleration * Time.deltaTime;
+            if (currentSpeed > maxSpeed)
+            {
+                currentSpeed = maxSpeed;
+            }
+        }
+        if (!Input.GetKey(KeyCode.W))
+        {
+            currentSpeed -= deceleration * Time.deltaTime;
+        }
+        /*if (Input.GetKey(KeyCode.S))
+        {
+            currentSpeed -= acceleration * Time.deltaTime * 1.5f;
+        }
+        */
+        if (currentSpeed < 0) { currentSpeed = 0; }
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+            currentTurnSpeed += turnAccel;
+        }
+
+        timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
+
+        print(currentSpeed);
+        print(timSpeed);
+
     }
     
     void FixedUpdate()
     {
         bool isRunning = _direction.magnitude > 0.1f;
-        
-        if (isRunning)
+
+        if (isRunning && direction.y >= 0)
         {
-            Vector3 direction = transform.forward * _direction.z;
-            _rigidbody.MovePosition(_rigidbody.position + direction * (_speed * Time.fixedDeltaTime));
-            
+            direction = transform.forward * _direction.z;
+
             Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
             _rigidbody.MoveRotation(newRotation);
         }
 
+        _rigidbody.MovePosition(_rigidbody.position + direction * (currentSpeed * Time.fixedDeltaTime));
+
         _animator.SetBool("isRunning", isRunning);
     }
+
+    float map(float s, float a1, float a2, float b1, float b2)
+    {
+        return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
+    }
+
 }
