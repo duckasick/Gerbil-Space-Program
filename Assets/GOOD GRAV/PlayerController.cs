@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
+            _rigidbody.AddForce(-_gravityBody.GravityDirection * (jumpForce + 10), ForceMode.Impulse);
         }
 
         if (Input.GetKey(KeyCode.W))
