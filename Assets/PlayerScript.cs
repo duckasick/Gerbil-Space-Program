@@ -3,15 +3,7 @@ using static UnityEditor.PlayerSettings;
 
 public class PlayerScript : MonoBehaviour
 {
-    /*
-    [Header("Grounded")]
-    public float iniAccelForce;
-    public float iniSpeed;
-    public float truAccelForce;
-    public float groundFriction;
-    public float groundSpeed;
-    float maxSpeed;
-    */
+    
 
     [SerializeField] float accel;
     [SerializeField] float _turnSpeed;
@@ -41,69 +33,25 @@ public class PlayerScript : MonoBehaviour
 
     void xMovement()
     {
-        ///// X MOVEMENT
-        // Reset Velocity
-        //if (Input.GetKeyDown(KeyCode.A) && rb.linearVelocity.x > 0) { rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); }
-        //if (Input.GetKeyDown(KeyCode.D) && rb.linearVelocity.x < 0) { rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); }
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(new Vector3(0, 0, accel * d));
+            rb.AddForce(Vector3.forward * accel * d);
         }
         
-
-        //Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
-        //Quaternion newRotation = Quaternion.Slerp(rb.rotation, rb.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
-        //rb.MoveRotation(newRotation);
-
-
-        /*
-        //Right
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            if (rb.linearVelocity.x < iniSpeed)
-            {
-                rb.AddRelativeForce(new Vector3(iniAccelForce * d, 0, 0), ForceMode.Force);
-            }
-            else
-            {
-                rb.AddRelativeForce(new Vector3(truAccelForce * d, 0, 0), ForceMode.Force);
-            }
+            rb.AddForce(Vector3.forward * -accel * d);
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        
+        if (Input.GetKey(KeyCode.A))
         {
-            if (rb.linearVelocity.x > -iniSpeed)
-            {
-                rb.AddRelativeForce(new Vector3(-iniAccelForce * d, 0, 0), ForceMode.Force);
-            }
-            else
-            {
-                rb.AddRelativeForce(new Vector3(-truAccelForce * d, 0, 0), ForceMode.Force);
-            }
+            rb.AddForce(Vector3.left * accel * d);
         }
 
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
-            if (rb.linearVelocity.x > -1 && rb.linearVelocity.x < 1)
-            {
-                rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
-            }
-            else
-            {
-                if (rb.linearVelocity.x < 0)
-                {
-                    rb.AddRelativeForce(new Vector3(groundFriction * d, 0, 0), ForceMode.Force);
-                }
-                if (rb.linearVelocity.x > 0)
-                {
-                    rb.AddRelativeForce(new Vector3(-groundFriction * d, 0, 0), ForceMode.Force);
-                }
-            }
+            rb.AddForce(Vector3.right * accel * d);
         }
-
-        //Velocity cap;
-        if (rb.linearVelocity.x < -maxSpeed) { rb.linearVelocity = new Vector2(-maxSpeed, rb.linearVelocity.y); }
-        if (rb.linearVelocity.x > maxSpeed) { rb.linearVelocity = new Vector2(maxSpeed, rb.linearVelocity.y); }
-        */
     }
 }
