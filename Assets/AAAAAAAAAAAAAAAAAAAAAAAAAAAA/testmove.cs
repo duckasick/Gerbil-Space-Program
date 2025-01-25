@@ -10,6 +10,7 @@ public class testmove : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (Input.GetAxis("Vertical") > 0)
         {
             rb.AddForce(bingbong.forward * acc * Time.deltaTime);
@@ -18,6 +19,18 @@ public class testmove : MonoBehaviour
         if (Input.GetAxis("Vertical") < 0)
         {
             rb.AddForce(-bingbong.forward * acc * Time.deltaTime);
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            rb.AddForce(bingbong.right * acc * Time.deltaTime);
+
+        }
+
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            rb.AddForce(-bingbong.right * acc * Time.deltaTime);
+
         }
     }
 }
