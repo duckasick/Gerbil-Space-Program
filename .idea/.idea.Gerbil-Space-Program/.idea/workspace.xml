@@ -13,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/New Gravty/CenterGravity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/New Gravty/GravityAreaV2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/New Gravty/LineGravity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -76,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1737755830858</updated>
       <workItem from="1737755835889" duration="3191000" />
-      <workItem from="1737802734829" duration="444000" />
+      <workItem from="1737802734829" duration="4129000" />
     </task>
     <servers />
   </component>

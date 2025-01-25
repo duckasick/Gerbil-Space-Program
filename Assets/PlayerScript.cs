@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         d = Time.deltaTime;
-        print(rb.linearVelocity);
+        //print(rb.linearVelocity);
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         xMovement();
     }
