@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 200290284}
   - component: {fileID: 200290285}
   m_Layer: 5
-  m_Name: DialogueHolder (6)
+  m_Name: splace get it
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 756707914}
   - component: {fileID: 756707915}
   m_Layer: 5
-  m_Name: DialogueHolder (3)
+  m_Name: how dare they
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +1878,7 @@ GameObject:
   - component: {fileID: 1075742418}
   - component: {fileID: 1075742419}
   m_Layer: 5
-  m_Name: DialogueHolder
+  m_Name: Greetings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2198,7 +2198,7 @@ GameObject:
   - component: {fileID: 1443558620}
   - component: {fileID: 1443558621}
   m_Layer: 5
-  m_Name: DialogueHolder (2)
+  m_Name: Using our balls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2258,7 +2258,7 @@ GameObject:
   - component: {fileID: 1458245497}
   - component: {fileID: 1458245498}
   m_Layer: 5
-  m_Name: DialogueHolder (1)
+  m_Name: Humans have been ahead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2318,7 +2318,7 @@ GameObject:
   - component: {fileID: 1619627301}
   - component: {fileID: 1619627302}
   m_Layer: 5
-  m_Name: DialogueHolder (5)
+  m_Name: to plant our flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2398,7 +2398,11 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -8324844849296004465, guid: 5de2bcc110d27c346b03ca68ec6c0056, type: 2}
+    value: {fileID: 1075742417}
+  - key: {fileID: 3488145124962270329, guid: 5de2bcc110d27c346b03ca68ec6c0056, type: 2}
+    value: {fileID: 1075742419}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1633466492
@@ -2427,7 +2431,7 @@ GameObject:
   - component: {fileID: 1645936239}
   - component: {fileID: 1645936240}
   m_Layer: 5
-  m_Name: DialogueHolder (4)
+  m_Name: Today we launch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
