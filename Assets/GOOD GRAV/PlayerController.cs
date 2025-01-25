@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         bool isRunning = _direction.magnitude > 0.1f;
         print(direction);
-        if (isRunning && !Input.GetKey(KeyCode.S))
+        if (isRunning && !Input.GetKey(KeyCode.S) && isGrounded)
         {
             direction = transform.forward * _direction.z;
 
