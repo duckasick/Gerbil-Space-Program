@@ -540,20 +540,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 589109920}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: jumpForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _groundCheck
       value: 
       objectReference: {fileID: 326726599}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: acceleration
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: deceleration
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _groundMask.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426596154567813008, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.227
       objectReference: {fileID: 0}
     - target: {fileID: 2426596155683567241, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: m_Name
