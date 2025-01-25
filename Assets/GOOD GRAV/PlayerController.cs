@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     
     private float _groundCheckRadius = 0.3f;
     private float _speed = 8;
-    public float _turnSpeed = 1500f;
+    //public float _turnSpeed = 1500f;
 
     private Rigidbody _rigidbody;
     private Vector3 _direction;
