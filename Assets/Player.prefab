@@ -276,13 +276,14 @@ MonoBehaviour:
   _cam: {fileID: 1687258585}
   _animator: {fileID: 3193503600150617723}
   playerAnim: {fileID: 7355736684270494808}
+  _turnSpeed: 1500
   acceleration: 3
   deceleration: 2
   currentSpeed: 0
-  maxSpeed: 0
-  turnAccel: 0
+  maxSpeed: 10
+  turnSpeed: 100
   timSpeed: 0
-  jumpForce: 0
+  jumpForce: 800
 --- !u!114 &6577783567661274977
 MonoBehaviour:
   m_ObjectHideFlags: 0
