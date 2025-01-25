@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
 
     public float turnAccel;
-    public float currentTurnSpeed;
 
     public float timSpeed;
 
@@ -38,6 +37,10 @@ public class PlayerController : MonoBehaviour
         _gravityBody = transform.GetComponent<GravityBody>();
     }
 
+    //Hoe snel
+    //Hogere jump afhankelijk van speed
+    //Turn
+    //
 
     void Update()
     {
@@ -47,8 +50,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            float trueJumpForce = jumpForce * (timSpeed / 100);
-
             _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
         }
 
@@ -71,12 +72,9 @@ public class PlayerController : MonoBehaviour
         */
         if (currentSpeed < 0) { currentSpeed = 0; }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            currentTurnSpeed += turnAccel;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+            
         }
-        else { currentTurnSpeed -= turnAccel * 3; if (currentTurnSpeed < 0) { currentTurnSpeed = 0; } }
-
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
 
@@ -89,11 +87,11 @@ public class PlayerController : MonoBehaviour
     {
         bool isRunning = _direction.magnitude > 0.1f;
 
-        if (isRunning && direction.y >= 0)
+        if (isRunning)
         {
             direction = transform.forward * _direction.z;
 
-            Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (currentTurnSpeed * Time.fixedDeltaTime), 0f);
+            Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
             _rigidbody.MoveRotation(newRotation);
         }

@@ -532,6 +532,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 698840204}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 589109920}
@@ -539,6 +543,14 @@ PrefabInstance:
       propertyPath: _groundCheck
       value: 
       objectReference: {fileID: 326726599}
+    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: acceleration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: deceleration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _groundMask.m_Bits
       value: 8
@@ -557,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426596155683567247, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.181667
+      value: 37.84
       objectReference: {fileID: 0}
     - target: {fileID: 2426596155683567247, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: m_LocalRotation.w
