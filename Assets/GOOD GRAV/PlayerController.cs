@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private Transform _cam;
     [SerializeField] private Animator _animator;
+
+    public Animator playerAnim;
     
     private float _groundCheckRadius = 0.3f;
     private float _speed = 8;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float deceleration;
     public float currentSpeed = 0;
     public float maxSpeed;
+    
 
     public float turnAccel;
 
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        playerAnim.SetFloat("Speed", timSpeed);
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         bool isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundMask);
         _animator.SetBool("isJumping", !isGrounded);
