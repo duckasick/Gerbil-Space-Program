@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c2176442a98a942b77031e096f0809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: -10
+  gravityForce: -100
 --- !u!135 &1004391476
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1456,6 +1456,7 @@ GameObject:
   - component: {fileID: 2144225977}
   - component: {fileID: 2144225976}
   - component: {fileID: 2144225975}
+  - component: {fileID: 2144225981}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1596,6 +1597,20 @@ Transform:
   - {fileID: 189823918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2144225981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144225974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c884c6d7eb15cd74cbb69c9a62c86855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityForce: 0
+  gravityCenter: {x: 0, y: 0, z: 0}
 --- !u!1001 &94502317126670345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1666,7 +1681,7 @@ PrefabInstance:
       objectReference: {fileID: 765212613}
     - target: {fileID: 8814032369252467246, guid: 7e403d01eccb7a845bd1b988e6a3b6ab, type: 3}
       propertyPath: m_VersionIndex
-      value: 1004
+      value: 1007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
