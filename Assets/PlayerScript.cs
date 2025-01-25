@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
 
     Rigidbody rb;
     float d;
+    public GameObject planet;
 
     private Vector3 _direction = Vector3.zero;
 
@@ -45,11 +46,15 @@ public class PlayerScript : MonoBehaviour
         // Reset Velocity
         //if (Input.GetKeyDown(KeyCode.A) && rb.linearVelocity.x > 0) { rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); }
         //if (Input.GetKeyDown(KeyCode.D) && rb.linearVelocity.x < 0) { rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); }
+        transform.LookAt(planet.transform.position);
+
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(new Vector3(0, 0, accel * d));
+            rb.AddRelativeForce(new Vector3(0, accel*d, 0));
         }
+
+
         
 
         //Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
