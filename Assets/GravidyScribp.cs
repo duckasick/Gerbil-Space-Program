@@ -18,11 +18,13 @@ public class GravidyScribp : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerController pc))
+        if (other.TryGetComponent(out PlayerScript pc))
         {
+            pc.gravitySpeed = gravityForce;
             pc.AddGrav(gravityForce, new Vector3(transform.position.x, transform.position.y, transform.position.z));
+
         }
     }
 }

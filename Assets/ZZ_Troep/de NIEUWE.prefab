@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1128057781309067517, guid: e6caf11b769badb45870f953989d86f0, type: 3}
       propertyPath: m_Name
-      value: Character controller Variant
+      value: de NIEUWE
       objectReference: {fileID: 0}
     - target: {fileID: 1128057781309067517, guid: e6caf11b769badb45870f953989d86f0, type: 3}
       propertyPath: m_Layer
@@ -340,7 +340,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6845819642636258394, guid: e6caf11b769badb45870f953989d86f0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 354792885276281415, guid: e6caf11b769badb45870f953989d86f0, type: 3}
@@ -389,7 +390,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
