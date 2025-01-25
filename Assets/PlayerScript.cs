@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
     {
         d = Time.deltaTime;
         //print(rb.linearVelocity);
-        _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         xMovement();
     }
 
@@ -49,12 +48,9 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(new Vector3(0, accel * d, 0));
+            rb.AddRelativeForce(new Vector3(0, 0, accel * d));
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddRelativeForce(new Vector3(0, accel * d, 0));
-        }
+        
 
         //Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
         //Quaternion newRotation = Quaternion.Slerp(rb.rotation, rb.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
