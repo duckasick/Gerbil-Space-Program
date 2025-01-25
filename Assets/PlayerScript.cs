@@ -35,19 +35,9 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         d = Time.deltaTime;
-        xMovement();
         print(rb.linearVelocity);
-
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-
-        Vector3 direction = transform.position - gravityPos;
-        Vector3 newDir = direction.normalized;
-        rb.AddForce(gravitySpeed * newDir * Time.deltaTime, ForceMode.Impulse);
-    }
-
-    public void AddGrav(float force, Vector3 pos)
-    {
-        gravityPos = pos;
+        xMovement();
     }
 
     void xMovement()
