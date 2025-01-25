@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     
     private float _groundCheckRadius = 0.3f;
     [SerializeField] private float _speed = 8;
+    [SerializeField] private float acceleration; 
     [SerializeField] private float _turnSpeed = 1500f;
     [SerializeField] private float _jumpForce = 50f;
 
@@ -36,6 +37,13 @@ public class PlayerController : MonoBehaviour
             _rigidbody.AddForce(-_gravityBody.GravityDirection * _jumpForce, ForceMode.Impulse);
         }
     }
+
+    public void AddGrav(float force, Vector3 pos)
+    {
+        Vector3 direction = transform.position - pos;
+        Vector3 newDir = direction.normalized;
+        _rigidbody.AddForce(force * newDir, ForceMode.Acceleration);
+    }
     
     void FixedUpdate()
     {
@@ -45,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = transform.forward * _direction.z;
             _rigidbody.MovePosition(_rigidbody.position + direction * (_speed * Time.fixedDeltaTime));
+            
             
             Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
