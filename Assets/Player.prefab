@@ -270,10 +270,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 0
-  _groundCheck: {fileID: 0}
-  _cam: {fileID: 0}
-  _animator: {fileID: 0}
+    m_Bits: 8
+  _groundCheck: {fileID: 2426596154567813008}
+  _cam: {fileID: 1687258585}
+  _animator: {fileID: 3193503600150617723}
 --- !u!114 &6577783567661274977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +343,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 838f9aff0c278e649a44a3c661a4bac8, type: 3}
+--- !u!95 &3193503600150617723 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 838f9aff0c278e649a44a3c661a4bac8, type: 3}
+  m_PrefabInstance: {fileID: 9023822991161041898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8841047990678668289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 838f9aff0c278e649a44a3c661a4bac8, type: 3}
