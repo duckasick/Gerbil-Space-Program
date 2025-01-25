@@ -21,8 +21,10 @@ public class NewPlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (TryGetComponent<PlayerController>(out PlayerController pc))
+        //print("AAAAAAAAAAAAAAAAAAAAAAA");
+        if (other.TryGetComponent<PlayerController>(out PlayerController pc))
         {
+            //print("BBBBBBBBBBBBBBBBBBBBBBB");
             pc.UpdateValues(newMaxSpeed, newAcceleration, newDeceleration, newTurnSpeed, newJumpForce);
         }
     }

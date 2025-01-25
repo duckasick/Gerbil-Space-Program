@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundMask);
         if (justEntered && isGrounded)
         {
+            //print("wow updated");
             justEntered = false;
             maxSpeed = a; acceleration = b; deceleration = c; turnSpeed = d; jumpForce = e;
 
@@ -86,15 +87,15 @@ public class PlayerController : MonoBehaviour
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
 
-        print(currentSpeed);
-        print(timSpeed);
+        //print(currentSpeed);
+       //print(timSpeed);
 
     }
     
     void FixedUpdate()
     {
         bool isRunning = _direction.magnitude > 0.1f;
-        print(direction);
+        //print(direction);
         if (isRunning && !Input.GetKey(KeyCode.S) && isGrounded)
         {
             direction = transform.forward * _direction.z;
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateValues(float newSpeed, float newAcceleration, float newDeceleration, float newTurnSpeed, float newJumpForce)
     {
+        //print("start update");
         justEntered = true;
         a = newSpeed; b = newAcceleration; c = newDeceleration; d = newTurnSpeed; e = newJumpForce;
     }
