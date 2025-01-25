@@ -49,16 +49,16 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(new Vector3(0, 0, accel * d));
+            rb.AddRelativeForce(new Vector3(0, accel * d, 0));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddRelativeForce(new Vector3(0,0, -accel * d));
+            rb.AddRelativeForce(new Vector3(0, accel * d, 0));
         }
 
-        Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
-        Quaternion newRotation = Quaternion.Slerp(rb.rotation, rb.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
-        rb.MoveRotation(newRotation);
+        //Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
+        //Quaternion newRotation = Quaternion.Slerp(rb.rotation, rb.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
+        //rb.MoveRotation(newRotation);
 
 
         /*
