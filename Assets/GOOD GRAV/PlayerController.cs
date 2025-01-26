@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float _speed = 8;
     //public float _turnSpeed = 1500f;
 
-    private Rigidbody _rigidbody;
+    public Rigidbody _rigidbody;
     private Vector3 _direction;
 
     private GravityBody _gravityBody;
@@ -40,6 +40,13 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     float a, b, c, d, e;
 
+    private float _airTime = 0;
+
+    public float forwardFactor;
+
+    Vector3 fuck;
+
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -55,6 +62,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!isGrounded)
+        {
+            _airTime += Time.deltaTime;
+            if (_airTime > 5)
+            {
+                playerAnim.SetBool("isFalling", true);
+            }
+        }
+        else
+        {
+            playerAnim.SetBool("isFalling", false);
+        }
+        
         playerAnim.SetFloat("Speed", timSpeed);
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundMask);
@@ -66,7 +86,6 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        _animator.SetBool("isJumping", !isGrounded);
 
         // Check if the player was in the air and just landed
         if (isGrounded && !hasLanded)
@@ -87,7 +106,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             movementAnim.SetTrigger("isJumping");
-            _rigidbody.AddForce(-_gravityBody.GravityDirection * (jumpForce + 10), ForceMode.Impulse);
+            Vector3 upJump = -_gravityBody.GravityDirection.normalized * (jumpForce * 1000 + 10) * (timSpeed / 100) * Time.deltaTime;
+            Vector3 forwardJump = fuck * forwardFactor * jumpForce * 1000 * (timSpeed / 100) * Time.deltaTime;
+            print(upJump);
+            print(forwardJump);
+
+            _rigidbody.AddForce(upJump, ForceMode.Impulse);
+            _rigidbody.AddForce(forwardJump, ForceMode.Impulse);
         }
         if (isGrounded)
         {
@@ -102,6 +127,12 @@ public class PlayerController : MonoBehaviour
         if (!Input.GetKey(KeyCode.W))
         {
             currentSpeed -= deceleration * Time.deltaTime;
+        }
+
+        if (!isGrounded)
+        {
+            currentSpeed -= deceleration * Time.deltaTime;
+            _rigidbody.linearVelocity = Vector3.MoveTowards(_rigidbody.linearVelocity, Vector3.zero, deceleration * 1.5f *Time.deltaTime);
         }
 
         if (currentSpeed < 0) { currentSpeed = 0; }
@@ -121,20 +152,29 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+  
         bool isRunning = _direction.magnitude > 0.1f;
         //print(direction);
         if (isRunning && !Input.GetKey(KeyCode.S) && isGrounded)
         {
             direction = transform.forward * _direction.z;
 
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                fuck = fuck;
+            }
+            else { fuck = direction; }
+
+            //print(direction);
+            //print(fuck);
+
+
             Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (turnSpeed * Time.fixedDeltaTime), 0f);
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
             _rigidbody.MoveRotation(newRotation);
         }
 
-        _rigidbody.MovePosition(_rigidbody.position + direction * (currentSpeed * Time.fixedDeltaTime));
-
-        _animator.SetBool("isRunning", isRunning);
+        _rigidbody.MovePosition(_rigidbody.position + fuck * (currentSpeed * Time.fixedDeltaTime));
     }
 
     float map(float s, float a1, float a2, float b1, float b2)

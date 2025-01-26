@@ -2964,6 +2964,8 @@ PlayableDirector:
     value: {fileID: 216798082}
   - key: {fileID: -6813782794046041363, guid: 90aa2ba6fdc0ed747b53ccac3a8d3a06, type: 2}
     value: {fileID: 216798082}
+  - key: {fileID: 7187996369800624931, guid: 90aa2ba6fdc0ed747b53ccac3a8d3a06, type: 2}
+    value: {fileID: 1742248134}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &764067795
@@ -6374,8 +6376,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: balls 22
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f99b4ac05901876418f24a759efd8904, type: 2}
-  m_sharedMaterial: {fileID: 8677156992492653318, guid: f99b4ac05901876418f24a759efd8904, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f2fa6e40cae5f17408cde24ff9da37bc, type: 2}
+  m_sharedMaterial: {fileID: 5334243683617813115, guid: f2fa6e40cae5f17408cde24ff9da37bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6451,6 +6453,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715516731}
   m_CullTransparentMesh: 1
+--- !u!1 &1742248133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742248136}
+  - component: {fileID: 1742248135}
+  - component: {fileID: 1742248134}
+  m_Layer: 0
+  m_Name: Scene changer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742248134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742248133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a55812d18e0ab6b4989b6e0ea1ebafbc, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1742248135}
+          m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1742248135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742248133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d5599bc1d59c04ca90c016a2be949b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 3.cutscene 1
+--- !u!4 &1742248136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742248133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 138.53807, y: 209.9826, z: -83.48935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1782592616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7674,3 +7752,4 @@ SceneRoots:
   - {fileID: 1614954811}
   - {fileID: 764067795}
   - {fileID: 1300616131}
+  - {fileID: 1742248136}
