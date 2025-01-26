@@ -86,6 +86,16 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnim.SetBool("isFalling", true);
             }
+
+            if (_airTime > 4)
+            {
+                deceleration = standarddecel;
+            }
+
+            if (_airTime > 10)
+            {
+                respawn();
+            }
         }
         else
         {
