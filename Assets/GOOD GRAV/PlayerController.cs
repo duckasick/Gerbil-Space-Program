@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
 
     private float _airTime = 0;
 
+    public float forwardFactor;
+
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
