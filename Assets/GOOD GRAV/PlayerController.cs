@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cam;
     [SerializeField] private Animator _animator;
 
+    public Transform checkPoint;
+
     public Animator playerAnim;
     public Animator movementAnim;
     
@@ -63,8 +65,14 @@ public class PlayerController : MonoBehaviour
 
     private bool hasLanded = false;
 
+    public void respawn()
+    {
+        _rigidbody.linearVelocity = Vector3.zero;
+        this.transform.position = checkPoint.transform.position;
+    }
     void Update()
     {
+        playerAnim.SetBool("isGrounded", isGrounded);
         //Reload scene
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -74,13 +82,14 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded)
         {
             _airTime += Time.deltaTime;
-            if (_airTime > 1)
+            if (_airTime > 1.5f)
             {
                 playerAnim.SetBool("isFalling", true);
             }
         }
         else
         {
+            _airTime = 0;
             playerAnim.SetBool("isFalling", false);
         }
         
@@ -150,6 +159,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
 
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            respawn();
         }
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
