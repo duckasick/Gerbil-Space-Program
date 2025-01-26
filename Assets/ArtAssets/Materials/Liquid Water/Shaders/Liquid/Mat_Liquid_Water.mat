@@ -21,15 +21,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_Liquid_Water
-  m_Shader: {fileID: -6465566751694194690, guid: 4ad8eaa5a090fcd498daed18ee514583, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
+  m_Shader: {fileID: 4800000, guid: f24809d953f26f64b9c352c89807da80, type: 3}
+  m_Parent: {fileID: 2100000, guid: 0e8acd6728778174bb6aa116fc751566, type: 2}
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2999
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -37,61 +37,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: 7730a55a744bbb240901a164b89e15a2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_426210e9070e4e8aaa30009dbad4a33c_Texture_1:
+    - _SurfaceDistortion:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_426210e9070e4e8aaa30009dbad4a33c_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Triplanar_92178987f9a942edb14e86351f5e63b9_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 7730a55a744bbb240901a164b89e15a2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Triplanar_b1a38972db2a42caa151ae91699d3b4b_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
+    - _SurfaceNoise:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _Amplitude: 0.25
-    - _Distortion: 0
-    - _FoamWidth: 0
-    - _Foam_Smoothness: 0.1
-    - _Frequency: 2.5
-    - _LiquidVolume: 0.15
-    - _Main_Texture_Opacity: 0.75
-    - _Main_Texture_Tile: 1.06
-    - _QueueControl: 1
-    - _QueueOffset: 0
-    - _Rim_Power: 30.6
-    - _Transparency: 0.5
-    - _WobbleX: 0
-    - _WobbleZ: 0
+    m_Floats: []
     m_Colors:
-    - _BottomColor: {r: 0.19999999, g: 0.019245278, b: 0.026160346, a: 1}
-    - _FillAmount: {r: 0, g: 0, b: 0, a: 0}
+    - _DepthGradientDeep: {r: 0.08599999, g: 0.40699998, b: 1, a: 0.749}
+    - _DepthGradientShallow: {r: 0.32499996, g: 0.807, b: 0.971, a: 0.725}
     - _FoamColor: {r: 0.4113207, g: 0.14823067, b: 0.15955338, a: 1}
-    - _MainColour: {r: 0, g: 0.31006274, b: 0.6415094, a: 0}
-    - _Rim_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _SecondaryColour: {r: 0, g: 0.25290298, b: 1, a: 0}
-    - _TopColor: {r: 0.05660379, g: 0.0064120833, b: 0.005873972, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
