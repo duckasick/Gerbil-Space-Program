@@ -8,7 +8,13 @@ public class NewPlayerStats : MonoBehaviour
     public float newTurnSpeed;
     public float newJumpForce;
 
+
     private PlayerController pc;
+
+    private bool doneonce = false;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +24,7 @@ public class NewPlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,8 +32,13 @@ public class NewPlayerStats : MonoBehaviour
 
         pc = other.GetComponent<PlayerController>();
 
+        if (!doneonce)
+        {
             pc.UpdateValues(newMaxSpeed, newAcceleration, newDeceleration, newTurnSpeed, newJumpForce);
-            print("fak");
+            doneonce = true;
+        }
+
+        print("fak");
         pc.deceleration = 50;
         pc._rigidbody.linearVelocity = Vector3.zero;
     }

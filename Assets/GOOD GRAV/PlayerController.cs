@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     public float deceleration;
     public float currentSpeed = 0;
     public float maxSpeed;
-  
+
+    [HideInInspector] public float standarddecel;
 
     public float turnSpeed;
 
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     float a, b, c, d, e;
 
-    private float _airTime = 0;
+   [HideInInspector] public float _airTime = 0;
 
     public float forwardFactor;
 
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
         _gravityBody = transform.GetComponent<GravityBody>();
+        standarddecel = deceleration;
     }
 
     //Hoe snel
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded)
         {
             _airTime += Time.deltaTime;
-            if (_airTime > 5)
+            if (_airTime > 1)
             {
                 playerAnim.SetBool("isFalling", true);
             }
@@ -89,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             //print("wow updated");
             justEntered = false;
-            maxSpeed = a; acceleration = b; deceleration = c; turnSpeed = d; jumpForce = e;
+            maxSpeed += a; acceleration += b; deceleration = standarddecel + c; turnSpeed += d; jumpForce += e;
 
 
         }
