@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     public Animator playerAnim;
+    public Animator movementAnim;
     
     private float _groundCheckRadius = 0.3f;
     private float _speed = 8;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float deceleration;
     public float currentSpeed = 0;
     public float maxSpeed;
-    
+  
 
     public float turnAccel;
 
@@ -33,7 +34,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     Vector3 direction;
-    
+    private object velocity;
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
     //Turn
     //
 
+    private bool hasLanded = false;
+
     void Update()
     {
         playerAnim.SetFloat("Speed", timSpeed);
@@ -52,8 +56,25 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundMask);
         _animator.SetBool("isJumping", !isGrounded);
 
+        // Check if the player was in the air and just landed
+        if (isGrounded && !hasLanded)
+        {
+            // Trigger the landing animation here
+            movementAnim.SetTrigger("isLanding");
+
+            // Set the flag to true to prevent it from triggering again
+            hasLanded = true;
+        }
+
+        // If the player is no longer grounded (in the air), reset the flag
+        if (!isGrounded && hasLanded)
+        {
+            hasLanded = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            movementAnim.SetTrigger("isJumping");
             _rigidbody.AddForce(-_gravityBody.GravityDirection * (jumpForce + 10), ForceMode.Impulse);
         }
 
@@ -69,24 +90,20 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed -= deceleration * Time.deltaTime;
         }
-        /*if (Input.GetKey(KeyCode.S))
-        {
-            currentSpeed -= acceleration * Time.deltaTime * 1.5f;
-        }
-        */
+
         if (currentSpeed < 0) { currentSpeed = 0; }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
-            
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+
         }
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
 
         print(currentSpeed);
         print(timSpeed);
-
     }
-    
+
     void FixedUpdate()
     {
         bool isRunning = _direction.magnitude > 0.1f;
