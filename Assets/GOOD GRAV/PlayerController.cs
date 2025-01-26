@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
             if (_airTime > 10)
             {
                 respawn();
+                _airTime = 0;
             }
         }
         else
