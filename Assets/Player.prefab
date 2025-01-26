@@ -277,6 +277,7 @@ MonoBehaviour:
   _animator: {fileID: 3193503600150617723}
   playerAnim: {fileID: 7355736684270494808}
   movementAnim: {fileID: 8490232439264889977}
+  _rigidbody: {fileID: 0}
   acceleration: 3
   deceleration: 2
   currentSpeed: 0
@@ -284,6 +285,7 @@ MonoBehaviour:
   turnSpeed: 100
   timSpeed: 0
   jumpForce: 800
+  forwardFactor: 0
 --- !u!114 &6577783567661274977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +400,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.15
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -417,27 +419,27 @@ TrailRenderer:
       - serializedVersion: 3
         time: 0.22547716
         value: 1
-        inSlope: 0.24588794
-        outSlope: 0.24588794
+        inSlope: 0.07227979
+        outSlope: 0.07227979
         tangentMode: 0
         weightedMode: 3
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.1925326
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -2.3673856
-        outSlope: -2.3673856
+        inSlope: -2.7833772
+        outSlope: -2.7833772
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.11736333
+        inWeight: 0.11555018
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0.9627788}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
