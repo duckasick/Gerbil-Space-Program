@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
             justEntered = false;
             maxSpeed = a; acceleration = b; deceleration = c; turnSpeed = d; jumpForce = e;
 
+
         }
         _animator.SetBool("isJumping", !isGrounded);
 
@@ -108,8 +109,14 @@ public class PlayerController : MonoBehaviour
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
 
+<<<<<<< Updated upstream
         print(currentSpeed);
         print(timSpeed);
+=======
+        //print(currentSpeed);
+        //print(timSpeed);
+
+>>>>>>> Stashed changes
     }
 
     void FixedUpdate()

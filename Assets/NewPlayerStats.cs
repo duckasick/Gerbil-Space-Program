@@ -7,6 +7,8 @@ public class NewPlayerStats : MonoBehaviour
     public float newDeceleration;
     public float newTurnSpeed;
     public float newJumpForce;
+
+    private PlayerController pc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,11 +23,16 @@ public class NewPlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+<<<<<<< Updated upstream
         //print("AAAAAAAAAAAAAAAAAAAAAAA");
         if (other.TryGetComponent<PlayerController>(out PlayerController pc))
         {
             //print("BBBBBBBBBBBBBBBBBBBBBBB");
+=======
+        pc = other.GetComponent<PlayerController>();
+
+>>>>>>> Stashed changes
             pc.UpdateValues(newMaxSpeed, newAcceleration, newDeceleration, newTurnSpeed, newJumpForce);
-        }
+            print("fak");
     }
 }
