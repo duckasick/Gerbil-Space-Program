@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 510713843}
   - component: {fileID: 510713842}
   - component: {fileID: 510713845}
+  - component: {fileID: 510713846}
   m_Layer: 5
   m_Name: Launch
   m_TagString: Untagged
@@ -565,13 +566,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 510713840}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 510713846}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -712,6 +713,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &510713846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510713840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d5599bc1d59c04ca90c016a2be949b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 3.Cutscene 1
 --- !u!1 &525570441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1366,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GERBIL SPACE PROGRAM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f99b4ac05901876418f24a759efd8904, type: 2}
-  m_sharedMaterial: {fileID: 8677156992492653318, guid: f99b4ac05901876418f24a759efd8904, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1617,8 +1631,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: take off
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f99b4ac05901876418f24a759efd8904, type: 2}
-  m_sharedMaterial: {fileID: 8677156992492653318, guid: f99b4ac05901876418f24a759efd8904, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

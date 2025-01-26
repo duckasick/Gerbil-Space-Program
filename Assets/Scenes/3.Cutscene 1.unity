@@ -897,6 +897,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267110791}
   m_CullTransparentMesh: 1
+--- !u!1 &304487476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304487479}
+  - component: {fileID: 304487478}
+  - component: {fileID: 304487477}
+  m_Layer: 0
+  m_Name: Scenechanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &304487477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304487476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a55812d18e0ab6b4989b6e0ea1ebafbc, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 304487478}
+          m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &304487478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304487476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d5599bc1d59c04ca90c016a2be949b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 4.Cutscene 2
+--- !u!4 &304487479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304487476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 222.3071, y: 300.89075, z: -46.588165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407240714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,6 +2862,8 @@ PlayableDirector:
     value: {fileID: 200290285}
   - key: {fileID: -7602734629962733307, guid: 5de2bcc110d27c346b03ca68ec6c0056, type: 2}
     value: {fileID: 200290283}
+  - key: {fileID: -8197595524381281679, guid: 5de2bcc110d27c346b03ca68ec6c0056, type: 2}
+    value: {fileID: 304487477}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1633466492
@@ -3135,8 +3213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GERBIL SPACE PROGRAM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f99b4ac05901876418f24a759efd8904, type: 2}
-  m_sharedMaterial: {fileID: 8677156992492653318, guid: f99b4ac05901876418f24a759efd8904, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3518,7 +3596,7 @@ MonoBehaviour:
   m_text: Greetings my fellow rodents!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
-  m_sharedMaterial: {fileID: -7860300159041039982, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
+  m_sharedMaterial: {fileID: 5525795255379674132, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3902,3 +3980,4 @@ SceneRoots:
   - {fileID: 679918169}
   - {fileID: 1633466492}
   - {fileID: 1874896493}
+  - {fileID: 304487479}

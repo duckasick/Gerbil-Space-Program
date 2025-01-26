@@ -173,6 +173,8 @@ PlayableDirector:
     value: {fileID: 588690962}
   - key: {fileID: -4596238239087735469, guid: f24b696e1f02c174380369aef38c4c8f, type: 2}
     value: {fileID: 1448497402}
+  - key: {fileID: 7690049669262601701, guid: f24b696e1f02c174380369aef38c4c8f, type: 2}
+    value: {fileID: 1024365072}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &22960217
@@ -1671,6 +1673,82 @@ Transform:
   - {fileID: 1448497401}
   m_Father: {fileID: 571697448}
   m_LocalEulerAnglesHint: {x: -0.316, y: 11.056, z: 1.319}
+--- !u!1 &1024365071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024365074}
+  - component: {fileID: 1024365073}
+  - component: {fileID: 1024365072}
+  m_Layer: 0
+  m_Name: Scenestuff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1024365072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024365071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a55812d18e0ab6b4989b6e0ea1ebafbc, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1024365073}
+          m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1024365073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024365071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d5599bc1d59c04ca90c016a2be949b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 
+--- !u!4 &1024365074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024365071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 222.3071, y: 300.89075, z: -46.588165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1075742417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2279,7 @@ MonoBehaviour:
   m_text: LAUNCH!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
-  m_sharedMaterial: {fileID: -7860300159041039982, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
+  m_sharedMaterial: {fileID: 5525795255379674132, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2559,7 +2637,7 @@ MonoBehaviour:
   m_text: 3... 2... 1...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
-  m_sharedMaterial: {fileID: -7860300159041039982, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
+  m_sharedMaterial: {fileID: 5525795255379674132, guid: c9eb934ab3a5440489b8ee6116917057, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2986,3 +3064,4 @@ SceneRoots:
   - {fileID: 625092987}
   - {fileID: 22960217}
   - {fileID: 974784552}
+  - {fileID: 1024365074}
