@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     float a, b, c, d, e;
 
+    public AudioSource as1;
+
    [HideInInspector] public float _airTime = 0;
 
     public float forwardFactor;
@@ -139,6 +141,9 @@ public class PlayerController : MonoBehaviour
             Vector3 forwardJump = fuck * forwardFactor * jumpForce * 1000 * (timSpeed / 100) * Time.deltaTime;
             print(upJump);
             print(forwardJump);
+            as1.pitch = Random.Range(0.8f, 1.2f);
+            as1.Play();
+
 
             _rigidbody.AddForce(upJump, ForceMode.Impulse);
             _rigidbody.AddForce(forwardJump, ForceMode.Impulse);
