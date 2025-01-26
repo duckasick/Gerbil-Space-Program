@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     float a, b, c, d, e;
 
+    public float forwardFactor;
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -66,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        _animator.SetBool("isJumping", !isGrounded);
 
         // Check if the player was in the air and just landed
         if (isGrounded && !hasLanded)
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             movementAnim.SetTrigger("isJumping");
-            _rigidbody.AddForce(-_gravityBody.GravityDirection * (jumpForce + 10), ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.Scale(-_gravityBody.GravityDirection.normalized, Vector3.forward * forwardFactor) * (jumpForce + 10), ForceMode.Impulse);
         }
         if (isGrounded)
         {
@@ -133,8 +134,6 @@ public class PlayerController : MonoBehaviour
         }
 
         _rigidbody.MovePosition(_rigidbody.position + direction * (currentSpeed * Time.fixedDeltaTime));
-
-        _animator.SetBool("isRunning", isRunning);
     }
 
     float map(float s, float a1, float a2, float b1, float b2)
