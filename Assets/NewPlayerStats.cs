@@ -28,5 +28,7 @@ public class NewPlayerStats : MonoBehaviour
 
             pc.UpdateValues(newMaxSpeed, newAcceleration, newDeceleration, newTurnSpeed, newJumpForce);
             print("fak");
+        pc.deceleration = 50;
+        pc._rigidbody.linearVelocity = Vector3.zero;
     }
 }
