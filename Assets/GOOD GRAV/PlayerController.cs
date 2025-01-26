@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
 
     public void respawn()
     {
-        _rigidbody.linearVelocity = Vector3.zero;
         this.transform.position = checkPoint.transform.position;
     }
     void Update()

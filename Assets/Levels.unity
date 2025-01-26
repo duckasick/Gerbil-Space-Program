@@ -4040,6 +4040,11 @@ Transform:
   - {fileID: 2143790950}
   m_Father: {fileID: 1503719743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.868}
+--- !u!82 &825060945 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7328056686989682158, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+  m_PrefabInstance: {fileID: 1136851366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &827089816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1391145353431598653, guid: f90c00bdaba3c894f8101d90fa1d34cf, type: 3}
@@ -5756,6 +5761,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
+      propertyPath: as1
+      value: 
+      objectReference: {fileID: 825060945}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _cam
       value: 
