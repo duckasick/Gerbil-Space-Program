@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -62,7 +63,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        playerAnim.SetBool("isGrounded", isGrounded);
+        //Reload scene
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
         if (!isGrounded)
         {
@@ -127,12 +132,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (!Input.GetKey(KeyCode.W))
+        if (!Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
             currentSpeed -= deceleration * Time.deltaTime;
         }
 
-        if (!isGrounded)
+        if (!isGrounded && justEntered == false) 
         {
             currentSpeed -= deceleration * Time.deltaTime;
             _rigidbody.linearVelocity = Vector3.MoveTowards(_rigidbody.linearVelocity, Vector3.zero, deceleration * 1.5f *Time.deltaTime);
@@ -168,6 +173,7 @@ public class PlayerController : MonoBehaviour
             }
             else { fuck = direction; }
 
+
             //print(direction);
             //print(fuck);
 
@@ -176,8 +182,10 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
             _rigidbody.MoveRotation(newRotation);
         }
+        _rigidbody.MovePosition(_rigidbody.position + transform.forward * (currentSpeed * Time.fixedDeltaTime));
 
-        _rigidbody.MovePosition(_rigidbody.position + fuck * (currentSpeed * Time.fixedDeltaTime));
+        //if (Input.GetKey(KeyCode.W)) { _rigidbody.MovePosition(_rigidbody.position + direction.normalized * (currentSpeed * Time.fixedDeltaTime)); }
+        //else if (!Input.GetKey(KeyCode.W)) { _rigidbody.MovePosition(_rigidbody.position + fuck.normalized * (currentSpeed * Time.fixedDeltaTime)); }
     }
 
     float map(float s, float a1, float a2, float b1, float b2)
