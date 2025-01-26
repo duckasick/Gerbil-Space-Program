@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
     Vector3 direction;
     private object velocity;
 
+    bool justEntered;
+    bool isGrounded;
+    float a, b, c, d, e;
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -109,14 +113,10 @@ public class PlayerController : MonoBehaviour
 
         timSpeed = map(currentSpeed, 0, maxSpeed, 0, 100);
 
-<<<<<<< Updated upstream
-        print(currentSpeed);
-        print(timSpeed);
-=======
+
         //print(currentSpeed);
         //print(timSpeed);
 
->>>>>>> Stashed changes
     }
 
     void FixedUpdate()
