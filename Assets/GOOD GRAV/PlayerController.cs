@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        playerAnim.SetBool("isGrounded", isGrounded);
+
         if (!isGrounded)
         {
             _airTime += Time.deltaTime;
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             movementAnim.SetTrigger("isJumping");
+            playerAnim.SetTrigger("isJumping");
             Vector3 upJump = -_gravityBody.GravityDirection.normalized * (jumpForce * 1000 + 10) * (timSpeed / 100) * Time.deltaTime;
             Vector3 forwardJump = fuck * forwardFactor * jumpForce * 1000 * (timSpeed / 100) * Time.deltaTime;
             print(upJump);
