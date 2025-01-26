@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);;
             _rigidbody.MoveRotation(newRotation);
         }
-        _rigidbody.MovePosition(_rigidbody.position + direction.normalized * (currentSpeed * Time.fixedDeltaTime));
+        _rigidbody.MovePosition(_rigidbody.position + transform.forward * (currentSpeed * Time.fixedDeltaTime));
 
         //if (Input.GetKey(KeyCode.W)) { _rigidbody.MovePosition(_rigidbody.position + direction.normalized * (currentSpeed * Time.fixedDeltaTime)); }
         //else if (!Input.GetKey(KeyCode.W)) { _rigidbody.MovePosition(_rigidbody.position + fuck.normalized * (currentSpeed * Time.fixedDeltaTime)); }
