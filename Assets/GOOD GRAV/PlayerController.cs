@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     float a, b, c, d, e;
 
-    public float forwardFactor;
+    private float _airTime = 0;
 
     void Start()
     {
@@ -57,6 +57,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!isGrounded)
+        {
+            _airTime += Time.deltaTime;
+            if (_airTime > 5)
+            {
+                playerAnim.SetBool("isFalling", true);
+            }
+        }
+        else
+        {
+            playerAnim.SetBool("isFalling", false);
+        }
+        
         playerAnim.SetFloat("Speed", timSpeed);
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundMask);
