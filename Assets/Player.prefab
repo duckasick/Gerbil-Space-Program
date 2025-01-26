@@ -280,10 +280,10 @@ MonoBehaviour:
   acceleration: 3
   deceleration: 2
   currentSpeed: 0
-  maxSpeed: 0
-  turnAccel: 0
+  maxSpeed: 10
+  turnSpeed: 100
   timSpeed: 0
-  jumpForce: 0
+  jumpForce: 800
 --- !u!114 &6577783567661274977
 MonoBehaviour:
   m_ObjectHideFlags: 0

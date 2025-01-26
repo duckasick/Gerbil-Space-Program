@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &326726599 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2426596154567813008, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
-  m_PrefabInstance: {fileID: 1136851366}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &497825859
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,11 +152,6 @@ Transform:
   - {fileID: 725022564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &589109920 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3193503600150617723, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
-  m_PrefabInstance: {fileID: 1136851366}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &692308308
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,11 +273,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!4 &698840204 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1687258585, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
-  m_PrefabInstance: {fileID: 1136851366}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &725022563
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,20 +513,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
-      propertyPath: _cam
-      value: 
-      objectReference: {fileID: 698840204}
-    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: maxSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 589109920}
-    - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: jumpForce
-      value: 500
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 1483783354, guid: d2bf3a101c650ec4aa91712127d8c1cd, type: 3}
       propertyPath: _groundCheck
