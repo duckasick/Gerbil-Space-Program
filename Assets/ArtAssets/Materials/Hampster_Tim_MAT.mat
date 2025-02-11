@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hampter_MAT
+  m_Name: Hampster_Tim_MAT
   m_Shader: {fileID: -6465566751694194690, guid: 80e8d5c44722b884e864e4208fed0ccf, type: 3}
-  m_Parent: {fileID: 2100000, guid: 41f24974b16124f4ab97a7c2ddbfe29f, type: 2}
+  m_Parent: {fileID: 2100000, guid: 672b45d0f4a43724d97925ac32598c1b, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -26,6 +26,10 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: cb2f3ae6f2b1a4d4ea139d830ec0bdff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

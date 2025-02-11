@@ -773,6 +773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hampter_Rig_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8340523783479847919, guid: 5c4b8a4f627f9a946a7958825108a35b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f24974b16124f4ab97a7c2ddbfe29f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

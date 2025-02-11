@@ -288,6 +288,7 @@ MonoBehaviour:
   turnSpeed: 1000
   timSpeed: 1
   jumpForce: 500
+  as1: {fileID: 0}
   _airTime: 0
   forwardFactor: 1
 --- !u!114 &6577783567661274977
@@ -671,6 +672,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56f8daba93d489b40a94d0e9b1549251, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 56f8daba93d489b40a94d0e9b1549251, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 56f8daba93d489b40a94d0e9b1549251, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
